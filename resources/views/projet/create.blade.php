@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Projets</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-</head>
-<body class="flex justify-center items-center py-20" >
+@extends('projet.index')
+
+@section('content')
+    
+
+<div class="flex justify-center items-center py-20" >
 
     <form action=" {{route('projet.store')}} " method="POST" class="border border-black w-[700px] max-w-[1024px] h-auto p-2 bg-[#FFEEEE]"> 
 
@@ -53,14 +49,12 @@
     
         </form>
 
-        {{-- @if (isset($projets))
+      @if (isset($projets))
           @include('projet.list') 
-        @endif --}}
-{{-- 
-        <div class="container"> 
-         @yield('content')
-        </div> --}}
-        
+        @endif    
 
-</body>
-</html>
+</div>
+
+
+
+@endsection

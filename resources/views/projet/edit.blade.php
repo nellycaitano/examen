@@ -10,7 +10,7 @@
 </head>
 <body class="flex justify-center items-center py-20" >
 
-    <form action=" {{route('projet.store')}} " method="POST" class="border border-black w-[700px] max-w-[1024px] h-auto p-2 bg-[#FFEEEE]"> 
+    <form action="/update/traitement" method="POST" class="border border-black w-[700px] max-w-[1024px] h-auto p-2 bg-[#FFEEEE]"> 
 
             <div class="flex items-center justify-center">
                  <h1 class="font-bold ">SAISIE DES PROJETS</h1>
@@ -19,7 +19,7 @@
     
          @csrf
 
-         <input type="text" class="form-control" id="id" name="id" style="display:none" value="{{ $projet->id }}">
+         <input type="text" class="form-control" id="id" name="id" value="{{ $projet->id }}" style="display: none">
 
          <div class="flex items-center justify-between mt-4">
             <label for="" class="">Code projet</label>

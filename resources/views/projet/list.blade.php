@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Liste Projet</title>
-    <!-- Ajouter les liens vers les styles de Tailwind CSS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-    
+
+@extends('projet.index')
+
+@section('content')
+        
 <div class=" px-20">
 
     <div class="container mx-auto py-8">
@@ -20,6 +14,12 @@
                 {{ session('status') }}
             </div>
         @endif
+
+        {{-- @if (session('status'))
+        <div class="alert alert-success">
+          {{ session('status') }}
+        </div> 
+      @endif --}}
 
         <table class="w-full border-collapse border border-gray-300">
             <thead>
@@ -42,7 +42,7 @@
                         <td>{{ $projet->localite->nomLocalite }}</td>
                         <td>
                             <a href="{{route('projet.edit',$projet->id)}}" class="text-blue-500 hover:text-blue-700">Modifier</a>
-                            <a href="#" class="text-red-500 hover:text-red-700 ml-2">Supprimer</a>
+                            <a href="{{route('projet.delete', $projet->id)}}" class="text-red-500 hover:text-red-700 ml-2">Supprimer</a>
                         </td>
                     </tr>
                 @endforeach
@@ -53,10 +53,9 @@
         </div>
     
     </div>
-
+    {{$projets->links()}}
 
 </div>
-
-</html>
+@endsection
 
 

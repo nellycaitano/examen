@@ -25,6 +25,9 @@ Route::get('/create',[ProjetController::class, 'create'])->name('projet.create')
 Route::get('/liste',[ProjetController::class, 'list'])->name('projet.list');
 Route::post('/store',[ProjetController::class, 'store'])->name('projet.store');
 Route::get('/edit/{id}',[ProjetController::class, 'edit'])->name('projet.edit');
+Route::post('/update/traitement', [ProjetController::class, 'update'])->name('projet.update');
+Route::get('/delete/{id}', [ProjetController::class, 'delete'])->name('projet.delete');
+
 
 Route::get('/index', function () {
     return view('projet.index');
